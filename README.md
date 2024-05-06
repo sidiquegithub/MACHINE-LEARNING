@@ -44,6 +44,15 @@ Supervised learning
 - Note that some regression algorithms can be used for classification as well, and vice versa. For example, Logistic Regression is commonly used for classification, as it can
 output a value that corresponds to the probability of belonging to a given class
 
+Unsupervised learning
+ - In unsupervised learning, as you might guess, the training data is unlabeled. The system tries to learn without a teacher.
+     - For example, say you have a lot of data about your blog’s visitors. You may want to run a clustering algorithm to try to detect groups of similar visitors.
+
+
+NOTE: Dimensionality Reduction ; The goal is to simplify the datawithout losing too much information.
+     - One way to do this is to merge several correla‐ted features into one. This is called feature extraction.  
+
+
 
 
 
