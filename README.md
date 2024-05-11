@@ -1,6 +1,19 @@
 # MACHINE-LEARNING
 MACHINE LEARNING ALGORITHMS FROM THE TEXTHANDS ON MACHINE LEARNING WITH SCIKIT LEARN KERAS AND TENSOR FLOW-2nd-Edition-Aurelien-Geron
 
+CHAPTER 1 FUNDAMENTALS OF MACHINE LEARNING
+- What is machine learning
+- Why Use Machine Learning?
+- Types of Machine Learning Systems
+  - Supervised/Unsupervised Learning
+  - Batch and Online Learning
+- Main Challenges of Machine Learning
+  - Examples of Bad Data
+  - A Couple of Examples of Bad Algorithms.
+    - Overfitting
+    - Underfitting
+
+
 # CHAPTER 1 FUNDAMENTALS OF MACHINE LEARNING
 
 ## What is machine learning
