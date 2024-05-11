@@ -13,6 +13,9 @@ CHAPTER 1 FUNDAMENTALS OF MACHINE LEARNING
     - Overfitting
     - Underfitting
 - Testing and Validating
+- Hyperparameter Tuning and Model Selection
+  - Holdout validation
+  - Cross-validation
 
 
 # CHAPTER 1 FUNDAMENTALS OF MACHINE LEARNING
@@ -142,6 +145,22 @@ error. This value tells you how well your model will perform on instances it has
 If the training error is low (i.e., your model makes few mistakes on the training set) but the generalization error is high, it means that your model is overfitting the train
 ing data.
 
+### Hyperparameter Tuning and Model Selection
+
+$Holdout validation$
+Simply hold out part of the training set to evaluate several candidate models and select the best one. 
+
+More specifically, you train multiple models with various hyperparameters on the reduced training set (i.e., the full training set minus the validation set), and
+you select the model that performs best on the validation set. After this holdout validation process, you train the best model on the full training set (including the validation set), and this gives you the final model. Lastly, you evaluate this final model on the test set to get an estimate of the generalization error
+
+Drawbacks of holdout validation : if the validation set is too small, then model evaluations will be imprecise: you may end up selecting a suboptimal model by mistake. Conversely, if the validation set is too large, then the remaining training set will be much smaller than the full training set. 
+
+
+ $Cross-validation$ 
+ Each model is evaluated once per validation set after it is trained on the rest of the data. By averaging out all Each model is evaluated
+once per validation set after it is trained on the rest of the data. By averaging out all. 
+
+ 
 
 
 
