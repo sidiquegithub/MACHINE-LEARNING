@@ -121,6 +121,9 @@ model). As such, it is not affected by the learning algorithm itself; it must be
 
 
      - _Underfitting the Training Data_
+     - It occurs when your model is too simple to learn the underlying structure of the data. For example, a linear model of life satisfaction is prone to underfit; reality is just more complex than
+the model, so its predictions are bound to be inaccurate, even on the training
+examples
      - Select a more powerful model, with more parameters.
      - Feed better features to the learning algorithm (feature engineering).
      - Reduce the constraints on the model (e.g., reduce the regularization hyperparameter).
