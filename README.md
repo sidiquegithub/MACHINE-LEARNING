@@ -162,11 +162,75 @@ once per validation set after it is trained on the rest of the data. By averagin
 
  
 
+# CHAPTER 1 END TO END MACHINE LEARNING PROJECT
 
+Main Steps
 
+1. Look at the big picture.
+2. Get the data.
+3. Discover and visualize the data to gain insights.
+4. Prepare the data for Machine Learning algorithms.
+5. Select a model and train it.
+6. Fine-tune your model.
+7. Present your solution.
+8. Launch, monitor, and maintain your system.
 
+## Look at the big picture
+### Frame the Problem
+The first question to ask your boss is what exactly the business objective is. Building a
+model is probably not the end goal. How does the company expect to use and benefit
+from this model? Knowing the objective is important because it will determine how
+you frame the problem, which algorithms you will select, which performance meas‐
+ure you will use to evaluate your model, and how much effort you will spend tweak‐
+ing it.
 
+First, you need to frame the problem: is it supervised, unsupervised, or Reinforcement
+Learning? Is it a classification task, a regression task, or something else? Should you
+use batch learning or online learning techniques?
 
+### Select a performance measure
+A typical performance measure for regression problems is the Root Mean Square Error (RMSE).
+$$RMSE = \sqrt{\frac{1}{m} \sum {(h(x_i)  - y_i)}^2 }$$
 
+Even though the RMSE is generally the preferred performance measure for regression
+tasks, in some contexts you may prefer to use another function. For example, suppose
+that there are many outlier districts. In that case, you may consider using the mean
+absolute error (MAE, also called the average absolute deviation) 
 
+$$ MAE = \frac {1}{m} \sum |h(x_i) - y_i|$$
 
+The higher the norm index, the more it focuses on large values and neglects small ones. This is why the RMSE is more sensitive to outliers than the MAE
+
+### Download the data
+### Take a quick look at the data
+Use functions like .head() , .hist()  etc
+### Create a test data
+When you estimate the generalization error using the test set, your estimate will be too optimistic, and you will launch a system that will not
+perform as well as expected. This is called $data\ snooping \ bias$.
+
+Scikit-Learn provides a few functions to split datasets into multiple subsets in various
+ways. The simplest function is train_test_split(). First, there is a random_state parameter that allows you to set the random generator
+seed. Second, you can pass it multiple datasets with an identical number of rows, and
+it will split them on the same indices (this is very useful, for example, if you have a
+separate DataFrame for labels):
+
+from sklearn.model_selection import train_test_split
+
+train_set, test_set = train_test_split(housing, test_size=0.2, random_state=42)
+
+So far we have considered purely random sampling methods. This is generally fine if
+your dataset is large enough (especially relative to the number of attributes), but if it
+is not, you run the risk of introducing a significant $sampling\ bias$. 
+
+When a survey company decides to call 1,000 people to ask them a few questions, they don’t just pick
+1,000 people randomly in a phone book. They try to ensure that these 1,000 people
+are representative of the whole population. For example, the US population is 51.3%
+females and 48.7% males, so a well-conducted survey in the US would try to maintain
+this ratio in the sample: 513 female and 487 male. This is called $stratified \ sampling $:
+the population is divided into homogeneous subgroups called strata, and the right
+number of instances are sampled from each stratum to guarantee that the test set is
+representative of the overall population.
+
+We can use Scikit-Learn’s StratifiedShuffleSplit class:
+
+### Discover and Visualize the Data to Gain Insights
